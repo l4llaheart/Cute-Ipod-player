@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPod Player</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="ipod-player">
+
+        <div class="ipod-screen">
+
+            <input type="file" id="folder-picker" webkitdirectory directory multiple style="display: none;">
+            <input type="color" id="theme-color-picker" style="display: none;">
+            <input type="file" id="wallpaper-picker" accept="image/*" style="display: none;">
+            <input type="file" id="case-picker" accept="image/*" style="display: none;">
+
+            <div class="screen-content ipod-welcome">
+                <h3 class="menu-title">Welcome 💖</h3>
+                <ul class="menu-list">
+                    <li class="menu-item active" id="import-trigger">🎵 Import Music</li>
+                </ul>
+                <p class="carousel-artist-name" style="text-align: center; padding: 5px;">Select your music folder to start!</p>
+            </div>
+
+            <div class="screen-content player-screen hidden">
+                <div class="first-zone">
+                    <div class="album-cover"></div>
+                    <div class="player-text-meta">
+                        <p class="title">Music-Name</p>
+                        <p class="Artist">Artist-Name</p> 
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progression"></div>
+                </div>
+            </div>
+
+            <div class="screen-content menu-screen hidden">
+                <h3 class="menu-title">iPod</h3>
+                <ul class="menu-list">
+                    <li class="menu-item active">All Songs</li>
+                    <li class="menu-item">Playlists</li>
+                    <li class="menu-item" id="now-playing-menu-item" style="display: none;">Now Playing</li>
+                    <li class="menu-item">Settings</li>
+                </ul>
+            </div>
+
+            <div class="screen-content all-songs hidden">
+                <div class="heart-carousel">
+                    <img class="heart-album previous-music-heart" src="" alt="">
+                    <img class="heart-album current-music-heart" src="" alt="">
+                    <img class="heart-album next-music-heart" src="" alt="">
+                </div>
+                <div class="carousel-text-meta">
+                    <p class="carousel-music-name">Music-Name</p>
+                    <p class="carousel-artist-name">Artist-Name</p>
+                </div>
+            </div>
+
+            <div class="screen-content ipod-playlist hidden">
+                <h3 class="menu-title">Playlists</h3>
+                <ul class="menu-list playlist-names-list">
+                    <li class="menu-item active playlist-maker">+ Create a Playlist</li>
+                </ul>
+            </div>
+
+            <div class="screen-content ipod-create-playlist hidden">
+                <h3 class="menu-title playlist-title-empty">My Playlist</h3>
+                <ul class="menu-list newplaylist-song-list">
+                    <li class="menu-item active playlist-play-all" style="font-weight: bold;">▶ Play Playlist</li>
+                    <li class="menu-item playlist-shuffle" style="font-weight: bold;">🔀 Shuffle Playlist</li>
+                    <li class="menu-item pnew-song-to-add" style="font-weight: bold;">+ Add a song</li>
+                </ul>
+            </div>
+
+            <div class="screen-content ipod-choose-song hidden">
+                <h3 class="menu-title">Add Songs</h3>
+                <ul class="menu-list songs-to-add-list"></ul>
+            </div>
+
+            <div class="screen-content ipod-selected-playlist hidden">
+                <h3 class="menu-title playlist-title">Playlist</h3>
+                <div class="heart-carousel">
+                    <img class="heart-album previous-music-heart" src="" alt="">
+                    <img class="heart-album current-music-heart" src="" alt="">
+                    <img class="heart-album next-music-heart" src="" alt="">
+                </div>
+                <div class="carousel-text-meta">
+                    <p class="carousel-music-name">Music-Name</p>
+                    <p class="carousel-artist-name">Artist-Name</p>
+                </div>
+            </div>
+
+            <div class="screen-content ipod-settings hidden">
+                <h3 class="menu-title">Settings</h3>
+                <ul class="menu-list settings-list">
+                    <li class="menu-item active">Themes</li>
+                    <li class="menu-item">Import Music</li>
+                    <li class="menu-item">About</li>
+                </ul>
+            </div>
+
+            <div class="screen-content ipod-themes hidden">
+                <h3 class="menu-title">Themes</h3>
+                <ul class="menu-list themes-list">
+                    <li class="menu-item active" data-theme="pink-cyber">🌸 Pink Cyber</li>
+                    <li class="menu-item" data-theme="blue-cyber">💙 New Jeans</li>
+                    <li class="menu-item" data-theme="black-cyber">🖤 Noir</li>
+                    <li class="menu-item" data-theme="my-theme">🎨 My Theme</li>
+                </ul>
+            </div>
+
+            <div class="screen-content ipod-about hidden">
+                <h3 class="menu-title">About</h3>
+                <div class="about-content" style="padding: 5px; font-size: 11px; text-align: center; line-height: 1.4;">
+                    <p style="font-weight: bold; font-size: 13px; color: var(--theme-color); margin-bottom: 5px;">Made with Love</p>
+                    <p style="color: var(--theme-color);">Version 1.0.0</p>
+                    <p style="margin-top: 8px; color: var(--theme-color);"> Nana ᜊ( ' ⩊ '𖦹)ᜊ</p>
+                </div>
+            </div>
+
+        </div> 
+        
+        <div class="ipod-wheel">
+            <div class="menu-button">Menu</div>
+            <div class="left-button">◀◀</div>
+            <div class="right-button">▶▶</div>
+            <div class="bottom-button">▶||</div>
+            <div class="center-button"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

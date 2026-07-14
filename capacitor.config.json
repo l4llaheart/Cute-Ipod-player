@@ -1,0 +1,9 @@
+{
+  "appId": "com.nana.ipodplayer",
+  "appName": "iPod Player",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true
+  }
+}
